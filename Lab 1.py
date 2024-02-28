@@ -49,10 +49,19 @@ age = "27"
 
 #print statement
 print(first_name, last_name, "is", age, "years old.")
-'''
+
 
 #one ounce is  28.35 grams (Q22)
 weight_in_ounces = 2.5
 one_ounce_to_grams = 28.35
-weight_in_grams = round(weight_in_ounces*one_ounce_to_grams, 1)
+# round fuction rounds to 1dp with having round(..., 1)
+weight_in_grams = round(weight_in_ounces*one_ounce_to_grams, 1) 
 print(weight_in_ounces, "ounces is", weight_in_grams, "grams.")
+'''
+#Q23:
+#Calculate the potential energy of a spring
+spring_constant = 100
+displacement = 0.5
+half = 1/2
+potential_energy = half*spring_constant*(displacement**2)
+print("The potential energy of the spring is",potential_energy)
