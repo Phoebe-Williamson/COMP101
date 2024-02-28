@@ -57,7 +57,7 @@ one_ounce_to_grams = 28.35
 # round fuction rounds to 1dp with having round(..., 1)
 weight_in_grams = round(weight_in_ounces*one_ounce_to_grams, 1) 
 print(weight_in_ounces, "ounces is", weight_in_grams, "grams.")
-'''
+
 #Q23:
 #Calculate the potential energy of a spring
 spring_constant = 100
@@ -65,3 +65,18 @@ displacement = 0.5
 half = 1/2
 potential_energy = half*spring_constant*(displacement**2)
 print("The potential energy of the spring is",potential_energy)
+'''
+#Q24:get montly loan repayment
+#M= L((i(1+i)n)/((1+i)n−1)) (equation)
+#variables
+loan_amount = 650000 # L in equation
+annual_interest_rate = 5 /100 # anual intrest rate, need to chnage to monthly
+loan_length_years = 20
+months_per_year = 12
+# maths
+monthly_intrest_rate = annual_interest_rate/months_per_year
+print(monthly_intrest_rate)
+yearly_payemnt= loan_amount/loan_length_years
+print(yearly_payemnt)
+monthly_payment= 
+
