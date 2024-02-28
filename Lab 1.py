@@ -40,8 +40,8 @@ gross_income = 5000
 tax_rate = tax_rate*gross_income
 net_income = gross_income-tax_rate
 print(net_income)
-'''
-# making a sentnce
+
+# making a sentnce (Q21)
 # variables given
 first_name = "Meera"
 last_name = "Patel"
@@ -49,3 +49,10 @@ age = "27"
 
 #print statement
 print(first_name, last_name, "is", age, "years old.")
+'''
+
+#one ounce is  28.35 grams (Q22)
+weight_in_ounces = 2.5
+one_ounce_to_grams = 28.35
+weight_in_grams = round(weight_in_ounces*one_ounce_to_grams, 1)
+print(weight_in_ounces, "ounces is", weight_in_grams, "grams.")
