@@ -1,6 +1,6 @@
 ##
 # A file in the first lab
-# date (29/02/24)
+# date (2/03/24)
 #
 '''
 # print Hello World
@@ -73,10 +73,21 @@ loan_amount = 650000 # L in equation
 annual_interest_rate = 5 /100 # anual intrest rate, need to chnage to monthly
 loan_length_years = 20
 months_per_year = 12
+payments= 240
 # maths
 monthly_intrest_rate = annual_interest_rate/months_per_year
-print(monthly_intrest_rate)
-yearly_payemnt= loan_amount/loan_length_years
-print(yearly_payemnt)
-monthly_payment= 
 
+# top of fraction: (i*(1+i)**n)
+top_of_fraction= (monthly_intrest_rate*((1 + monthly_intrest_rate))** payments)
+
+#bottom of fraction: ((1+i)n−1)
+bottom_of_fraction= (((1+ monthly_intrest_rate)** payments)- 1)
+
+#dividing fraction
+dividing= (top_of_fraction/ bottom_of_fraction)
+
+#timing by L
+monthly_payment = round(loan_amount * dividing)
+#printing equation out
+print(monthly_payment)
+print("You will need to pay $", monthly_payment, "monthly.")
