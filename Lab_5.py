@@ -69,7 +69,7 @@ number = smallest
 while number <= biggest:
     print(number, end=" ")
     number += 1
-'''
+
 #Q6
 amount = int(input("Enter an amount, multiple of 10: "))
 while amount %10 != 0 :
@@ -77,10 +77,21 @@ while amount %10 != 0 :
 
 print(f"Thank you. You will receive NZD{amount} in bill(s) of 10.")
 
-
-
-
-
+#Q7
+factor = 2
+number = int(input("Enter a number: "))
+if number < 2:
+    print("No prime factors")
+else:
+    print(f"The prime factors of {number} are:")
+    while factor <= number:
+        if number % factor == 0:
+            print(factor)
+            number = number // factor
+        else:
+            factor += 1
+'''
+#Q8
 
 
 
