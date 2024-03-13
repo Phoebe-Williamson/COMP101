@@ -79,24 +79,37 @@ print(f"Thank you. You will receive NZD{amount} in bill(s) of 10.")
 
 #Q7
 factor = 2
-number = int(input("Enter a number: "))
-if number < 2:
+number = int(input("Enter a number: ")) # asks user for number
+if number < 2: # checks if number is less than 2
     print("No prime factors")
 else:
-    print(f"The prime factors of {number} are:")
+    print(f"The prime factors of {number} are:") # prints out the prime facotrs
     while factor <= number:
         if number % factor == 0:
             print(factor)
             number = number // factor
         else:
             factor += 1
-'''
+
 #Q8
-
-
-
-
-
+one_cny_to_nzd = 0.22
+amount = round(float(input("Enter an amount in NZD: ")), 1)
+cny_amount = round(amount / one_cny_to_nzd, 2)
+print(f"{amount} NZD is equivalent to {cny_amount} CNY")
+keep_going = True
+while keep_going:
+    again = str(input("Convert another amount (y/n)? "))
+    if again == "n":
+        keep_going = False
+    else:
+        amount = round(float(input("Enter an amount in NZD: ")), 1)
+        cny_amount = round(amount / one_cny_to_nzd, 2)
+        print(f"{amount} NZD is equivalent to {cny_amount} CNY")
+'''
+#Q9
+start = int(input("Enter the range start: "))
+end = int(input("Enter the range end: "))
+between = int(input(f"Enter an integer between {start} and {end} (inclusive): "))
 
 
 
