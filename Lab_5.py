@@ -107,41 +107,16 @@ while keep_going:
         print(f"{amount} NZD is equivalent to {cny_amount} CNY")
 '''
 #Q9
+invalid = 0
 start = int(input("Enter the range start: "))
 end = int(input("Enter the range end: "))
 between = int(input(f"Enter an integer between {start} and {end} (inclusive): "))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+keep_going = True
+while keep_going:
+    if between < start or between > end:
+        invalid += between
+        between = int(input(f"Enter an integer between {start} and {end} (inclusive): "))
+    else:
+        keep_going = False
+print(f"The total of all the invalid integers is {invalid}.")
