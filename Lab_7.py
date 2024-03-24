@@ -32,6 +32,7 @@ else:
     print(new_sentence)
 
 #Q4
+# print out in alphabetical order
 password = input("Please enter your password:")
 password = password.strip()
 if len(password) < 9:
@@ -55,6 +56,7 @@ print()
 print("Movies List:")
 print("==============")
 print(movie_list)
+#look at l1 or l2 ass code to see
 '''
 #q6
 current_upis = ['cron777', 'emac263', 'gclo450',
