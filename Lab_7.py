@@ -1,7 +1,7 @@
 ##
 # a file for lab 7
 # Author: Phoebe Williamson
-# Date(24/03/24)
+# Date(25/03/24)
 '''
 #Q1
 first = str(input("Please enter the first 6 letter word: "))
@@ -15,33 +15,48 @@ print(f"New Pokemon name: {name}")
 
 #Q2
 word = str(input("Enter a word: "))
-corect_word =(word[:1]).capitalize()
-corect_word =(word[-1:]).upper()
-print(f"The converted word is: {corect_word}")
+if len(word) == 1:
+    correct_word = word.upper()
+else:
+    correct_word = (word[0:1].upper() + word[1:len(word)-1].lower() + word[len(word)-1:len(word)].upper())
+print(f"The converted word is: {correct_word}.")
 
 #Q3
 sentence = input("Please enter the sentence: ")
-if "(" not in sentence and ")" not in sentence:
+if ("(" not in sentence) and (")" not in sentence:
     print("No text to remove.")
 else:
-    for i in sentence:
-        if i == "(":
-            new_sentence = sentence.split("(")
-        elif i == ")":
-            new_sentence = sentence.split(")")
-    print(new_sentence)
+    end_delete = sentence.rfind(")")
+    start_delete = sentence.find("(")
+    new_sentence = (sentence[:(start_delete -1)] + sentence[end_delete +1:])
+
+    print("New sentence after removal:", new_sentence)
 
 #Q4
 # print out in alphabetical order
-password = input("Please enter your password:")
+number_count = 0
+alphabet_count = 0
+
+password = input("Please enter your password: ")
 password = password.strip()
+
+for i in password:
+    if i.isalpha() == True:
+        alphabet_count += 1
+    elif i.isdigit() == True:
+        number_count += 1
+
 if len(password) < 9:
     print("Your password is invalid!")
 elif "123" in password or "abc" in password:
     print("Your password is invalid!")
+elif number_count < 5:
+    print("Your password is invalid!")
+elif alphabet_count < 4:
+    print("Your password is invalid!")
 else:
     print("Your password is valid!")
-
+'''
 #Q5
 movie_list = []
 keep_going = True
@@ -93,8 +108,7 @@ while keep_running:
 #Q7 need to add to list, reverse lost and then print out with comma between 
 #and make sure there a no repetitions
 sentence = input("Please enter a sentence: ")
-
-
+'''
 
 
 
