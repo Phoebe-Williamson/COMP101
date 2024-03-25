@@ -23,14 +23,13 @@ print(f"The converted word is: {correct_word}.")
 
 #Q3
 sentence = input("Please enter the sentence: ")
-if ("(" not in sentence) and (")" not in sentence:
-    print("No text to remove.")
-else:
+if "("  in sentence and ")"  in sentence:
     end_delete = sentence.rfind(")")
     start_delete = sentence.find("(")
     new_sentence = (sentence[:(start_delete -1)] + sentence[end_delete +1:])
-
     print("New sentence after removal:", new_sentence)
+else:
+    print("No text to remove.")
 
 #Q4
 # print out in alphabetical order
@@ -56,7 +55,7 @@ elif alphabet_count < 4:
     print("Your password is invalid!")
 else:
     print("Your password is valid!")
-'''
+
 #Q5
 movie_list = []
 keep_going = True
@@ -66,13 +65,17 @@ while keep_going:
         keep_going = False
     else:
         movie_list.append(movie_name)
-
+movie_list = list(set(movie_list))
+movie_list.sort()
 print()
 print("Movies List:")
 print("==============")
-print(movie_list)
-#look at l1 or l2 ass code to see
-'''
+for movie_name in movie_list:
+    movie_key = movie_list.index(movie_name)
+    key = movie_key + 1
+    print(f"{key}) {movie_name}")
+
+
 #q6
 current_upis = ['cron777', 'emac263', 'gclo450',
                 'jcoc100', 'jduj117', 'lmes754', 'mjac999']
@@ -82,33 +85,44 @@ current_passwords = ['SuiiiAlNassr23', 'PcqcNP2022', 'WhatElse06',
 print("Current list of UPIs:", current_upis)
 print("Current list of passwords:", current_passwords)
 
+letter = input("Enter A to add a UPI/password pair or D to delete a pair: ")
 keep_running = True
 while keep_running:
-    letter = input("Enter A to add a UPI/password pair or D to delete a pair: ")
     if letter.upper() == "A": #add upi
         new_upi = input("Enter a new UPI: ")
         if new_upi in current_upis:
             print(f"{new_upi} is already used!")
-            new_upi = input("Enter a new UPI: ")
         else:
             current_upis.append(new_upi)
             new_password = input("Enter a new password: ")
             current_passwords.append(new_password)
+            print("Updated list of UPIs:", current_upis)
+            print("Updated list of passwords:", current_passwords)
+            break
+
     elif letter.upper() == "D": #delete upi
         upi_to_delete = input("Enter the UPI to be deleted: ")
         if upi_to_delete not in current_upis:
-            print("UPI does not match!")
-            upi_to_delete = input("Enter the UPI to be deleted: ")
+            print(f"{upi_to_delete} does not exist!")
         else:
-            #find upis key, find that key in passwords, set that to password
-            #check if the password_entered is equal to password,
-            #if not, say it does not match and ask again
-            # if password matches, remove upi an dpassowrd from the lists
+            password = input("Enter the current password: ")
+            password_key = current_upis.index(upi_to_delete)
+            verify_password = current_passwords[password_key]
+            if password != verify_password:
+                print("The password does not match!")
+            else:
+                current_upis.pop(password_key)
+                current_passwords.pop(password_key)
+                print("Updated list of UPIs:", current_upis)
+                print("Updated list of passwords:", current_passwords)
+                break
+                
 
+'''
 #Q7 need to add to list, reverse lost and then print out with comma between 
 #and make sure there a no repetitions
 sentence = input("Please enter a sentence: ")
-'''
+
 
 
 
